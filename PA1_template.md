@@ -97,7 +97,7 @@ str(activityData)
 ##  $ interval: int  0 5 10 15 20 25 30 35 40 45 ...
 ```
 
-##What is mean total number of steps taken per day?
+## What is mean total number of steps taken per day?
 1. Histogram
 
 ```r
@@ -148,7 +148,7 @@ median_steps
 * Mean:1.0766189\times 10^{4}
 * Median:10765
 
-##What is the average daily activity pattern?
+## What is the average daily activity pattern?
 
 ```r
 interval <- activityData %>%
@@ -175,7 +175,7 @@ maxSteps<-interval[which.max(interval$steps),]
 ```
 * Most steps are at interval 835, 206.1698113
 
-##Imputing missing values
+## Imputing missing values
 1. Calculate and report the total number of missing values in the dataset
 
 ```r
@@ -228,7 +228,7 @@ stepsByDayMedianImputed <- median(stepsByDayImputed$steps)
 * Mean(Imputed): 1.0766189\times 10^{4}
 * Median(Imputed): 1.0766189\times 10^{4}
 
-##Are there differences in activity patterns between weekdays and weekends?
+## Are there differences in activity patterns between weekdays and weekends?
 
 ```r
 activityDataImputed$dateType <-  ifelse(as.POSIXlt(activityDataImputed$date)$wday %in% c(0,6), 'weekend', 'weekday')
@@ -241,6 +241,5 @@ ggplot(averages, aes(interval, steps)) +
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
-
 
 
